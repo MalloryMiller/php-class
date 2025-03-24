@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+    <meta charset="utf-8">
+    <title>Assignment 1</title>
+
+    <style type="text/css">
+
+        :root {
+            --button-color: rgb(10, 195, 152);
+            --button-border-color: rgb(5, 116, 90);
+            --button-text-color: white;
+
+            --form-width: 500px;
+
+        }
+
+
+        body{ 
+            background-color: rgb(211, 211, 211); 
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form{
+            position: fixed;
+            border-radius: 10px;
+            background-color: white;
+            padding: 30px;
+            width: var(--form-width);
+            max-height: 90vh;
+            overflow: auto;
+            margin:auto;
+            transform: translate(calc(50vw - 50%), calc(50vh - 60%));
+            filter: drop-shadow(10px 15px 10px rgb(108, 108, 108));
+        }
+
+        .submit{
+            background-color: var(--button-color);
+            border-color: var(--button-border-color);
+            color: var(--button-text-color);
+            padding: 5px;
+            width:25%;
+            border-width: 3px;
+            border-radius: 10px;
+            border-style: solid;
+            margin-top: 30px;
+            transition:all 1s;
+
+            transform: translate(calc((var(--form-width)/2) - 50%),0px);
+            font-weight: bold;
+            
+        }
+
+        .submit:hover{
+            background-color: var(--button-border-color);
+            transition:all .5s;
+        }
+
+        .submit:active{
+            background-color: var(--button-text-color);
+            border-color: var(--button-text-color);
+            color: var(--button-border-color);
+        }
+
+        .form-body {
+            width: 90%;
+            margin: auto;
+        }
+
+        table {
+            transform: translate(calc((var(--form-width)/2) - 50%), 0px);
+        }
+
+        tr label {
+            width: 50% !important;
+            text-align: center;
+        }
+        td {
+            width: min-content;
+        }
+
+        input {
+            margin-bottom: 15px !important;
+        }
+
+        .agreement {
+            margin-top: 30px;
+            transform: translate(calc((var(--form-width)/2) - 50%), 0px);
+            width:fit-content
+
+        }
+
+        .required:after{
+            content: '*';
+            color: brown;
+        }
+    </style>
+    </head>
+
+    <body>
+
+        <form action="_blank" method="post" name="accountCreation">
+            <h1>Create an Account</h1>
+            <table class="form-body">
+                
+                <tr>
+                    <td>
+                        <label class="required" for="fname">First name</label>
+                    </td>
+                    <td>
+                        <input type="text" id="fname" name="fname" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="required" for="lname">Last name</label>
+                    </td>
+                    <td>
+                        <input type="text" id="lname" name="lname" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="required" for="email">Email</label>
+                    </td>
+                    <td>
+                        <input type="email" id="email" name="email"  required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label  class="required" for="pword">Password</label>
+                    </td>
+                    <td>
+                        <input type="password" id="pword" name="pword"  required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="required" for="gender">Gender</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="male" value="male" name="gender" required>
+                        <label for="male">Male</label> <br />
+                        <input type="radio" id="female" value="female" name="gender" required>
+                        <label for="female">Female</label>  <br />
+                        <input type="radio" id="nonbinary" value="nonbinary" name="gender" required>
+                        <label for="nonbinary">Nonbinary</label>  <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="required" for="dob">Date of Birth</label>
+                    </td>
+                    <td>
+                        <input type="date" id="dob" name="dob" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="required" for="language">Preferred Language</label>
+                    </td>
+                    <td>
+                        <select name="language" id="language">
+                            <option value="eng">English</option>
+                            <option value="spa">Spanish</option>
+                            <option value="frc">French</option>
+                            <option value="ger">German</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="form-item">
+                <div class="agreement">
+                    <input type="checkbox" id="agreement" name="agreement" required>
+                    <label class="required" for="agreement">I agree to the <a href="">terms and conditions</a></label>
+                </div>
+            </div>
+            
+            <input class="submit" type="submit" value="Submit">
+        </form>
+
+
+    </body>
+
+</html>
